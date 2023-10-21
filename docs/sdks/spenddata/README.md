@@ -28,7 +28,7 @@ const operationSecurity: GetBankFeesSecurity = {
 
   const res = await sdk.spendData.getBankFees({
     settlementIds: [
-      "Arizona",
+      "string",
     ],
     sort: "+createdAt",
   }, operationSecurity);
@@ -70,7 +70,7 @@ const operationSecurity: GetPayableAttachmentsSecurity = {
 };
 
   const res = await sdk.spendData.getPayableAttachments({
-    payableId: "Bespoke",
+    payableId: "string",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -114,7 +114,7 @@ const operationSecurity: GetPayablesSecurity = {
       GetPayablesBookkeepingStatus.Exported,
     ],
     ids: [
-      "Programmable",
+      "string",
     ],
     sort: "-createdAt,+payableDate",
   }, operationSecurity);
@@ -157,14 +157,14 @@ const operationSecurity: GetSettlementsSecurity = {
 
   const res = await sdk.spendData.getSettlements({
     ids: [
-      "Northwest",
+      "string",
     ],
     paidFrom: [
-      GetSettlementsPaidFrom.ExternalAccount,
+      GetSettlementsPaidFrom.SpendeskAccount,
     ],
     sort: "+createdAt",
     state: [
-      GetSettlementsState.FailedToExport,
+      GetSettlementsState.Exported,
     ],
   }, operationSecurity);
 
@@ -246,7 +246,7 @@ const operationSecurity: GetWalletSummarySecurity = {
 
   const res = await sdk.spendData.getWalletSummary({
     ids: [
-      "navigating",
+      "string",
     ],
   }, operationSecurity);
 

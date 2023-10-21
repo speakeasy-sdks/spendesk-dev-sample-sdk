@@ -65,7 +65,7 @@ const operationSecurity: GetAnalyticalValuesSecurity = {
 };
 
   const res = await sdk.accounts.getAnalyticalValues({
-    fieldId: "base",
+    fieldId: "string",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -106,7 +106,7 @@ const operationSecurity: GetCostCentersSecurity = {
 
   const res = await sdk.accounts.getCostCenters({
     ids: [
-      "green",
+      "string",
     ],
   }, operationSecurity);
 
@@ -148,10 +148,10 @@ const operationSecurity: GetEmployeeAccountsSecurity = {
 
   const res = await sdk.accounts.getEmployeeAccounts({
     ids: [
-      "Computer",
+      "string",
     ],
     memberIds: [
-      "separate",
+      "string",
     ],
   }, operationSecurity);
 
@@ -193,7 +193,7 @@ const operationSecurity: GetExpenseCategoriesSecurity = {
 
   const res = await sdk.accounts.getExpenseCategories({
     ids: [
-      "salmon",
+      "string",
     ],
   }, operationSecurity);
 
@@ -235,7 +235,7 @@ const operationSecurity: GetSupplierAccountsSecurity = {
 
   const res = await sdk.accounts.getSupplierAccounts({
     ids: [
-      "mole",
+      "string",
     ],
   }, operationSecurity);
 

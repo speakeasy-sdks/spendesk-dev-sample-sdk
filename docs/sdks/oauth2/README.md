@@ -24,12 +24,12 @@ import { GetAuthorizeCodeChallengeMethod, GetAuthorizeResponseType } from "Spend
   });
 
   const res = await sdk.oAuth2.getAuthorize({
-    clientId: "Investment",
-    codeChallenge: "Convertible",
+    clientId: "string",
+    codeChallenge: "string",
     codeChallengeMethod: GetAuthorizeCodeChallengeMethod.S256,
-    redirectUri: "Miami",
+    redirectUri: "string",
     responseType: GetAuthorizeResponseType.Code,
-    scope: "Ruthenium",
+    scope: "string",
   });
 
   if (res.statusCode == 200) {
@@ -67,12 +67,12 @@ import { PostTokenCreateRequestBodyGrantType } from "Spendesk-Public-API/dist/sd
   });
 
   const res = await sdk.oAuth2.postTokenCreate({
-    clientId: "CLI",
-    clientSecret: "supposing",
-    code: "fellow",
-    codeVerifier: "deposit",
+    clientId: "string",
+    clientSecret: "string",
+    code: "string",
+    codeVerifier: "string",
     grantType: PostTokenCreateRequestBodyGrantType.AuthorizationCode,
-    redirectUri: "woman",
+    redirectUri: "string",
   });
 
   if (res.statusCode == 200) {
@@ -111,7 +111,7 @@ import { PostTokenRefreshApplicationJSONGrantType } from "Spendesk-Public-API/di
 
   const res = await sdk.oAuth2.postTokenRefreshJson({
     grantType: PostTokenRefreshApplicationJSONGrantType.RefreshToken,
-    refreshToken: "Carolina",
+    refreshToken: "string",
   });
 
   if (res.statusCode == 200) {

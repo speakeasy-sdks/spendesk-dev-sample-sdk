@@ -7,15 +7,15 @@
 </div>
 
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
-## NPM
+### NPM
 
 ```bash
 npm add https://github.com/speakeasy-sdks/spendesk-dev-sample-sdk
 ```
 
-## Yarn
+### Yarn
 
 ```bash
 yarn add https://github.com/speakeasy-sdks/spendesk-dev-sample-sdk
@@ -24,8 +24,6 @@ yarn add https://github.com/speakeasy-sdks/spendesk-dev-sample-sdk
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
@@ -47,10 +45,10 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [accounts](docs/sdks/accounts/README.md)
+### [accounts](docs/sdks/accounts/README.md)
 
 * [getAnalyticalFields](docs/sdks/accounts/README.md#getanalyticalfields) - Get analytical fields
 * [getAnalyticalValues](docs/sdks/accounts/README.md#getanalyticalvalues) - Get analytical values
@@ -59,18 +57,18 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 * [getExpenseCategories](docs/sdks/accounts/README.md#getexpensecategories) - Get expense categories
 * [getSupplierAccounts](docs/sdks/accounts/README.md#getsupplieraccounts) - Get supplier accounts
 
-## [authentication](docs/sdks/authentication/README.md)
+### [authentication](docs/sdks/authentication/README.md)
 
 * [postAccessToken](docs/sdks/authentication/README.md#postaccesstoken) - Create access token
 
-## [oAuth2](docs/sdks/oauth2/README.md)
+### [oAuth2](docs/sdks/oauth2/README.md)
 
 * [getAuthorize](docs/sdks/oauth2/README.md#getauthorize) - Request authorization
 * [postTokenCreate](docs/sdks/oauth2/README.md#posttokencreate) - Request access token
 * [postTokenRefreshJson](docs/sdks/oauth2/README.md#posttokenrefreshjson) - Refresh access token
 * [postTokenRefreshRaw](docs/sdks/oauth2/README.md#posttokenrefreshraw) - Refresh access token
 
-## [spendData](docs/sdks/spenddata/README.md)
+### [spendData](docs/sdks/spenddata/README.md)
 
 * [getBankFees](docs/sdks/spenddata/README.md#getbankfees) - Get bank fees
 * [getPayableAttachments](docs/sdks/spenddata/README.md#getpayableattachments) - Get payables attachments
@@ -79,15 +77,13 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 * [getWalletLoads](docs/sdks/spenddata/README.md#getwalletloads) - Get wallet loads
 * [getWalletSummary](docs/sdks/spenddata/README.md#getwalletsummary) - Get wallet summaries
 
-## [suppliersAndUsers](docs/sdks/suppliersandusers/README.md)
+### [suppliersAndUsers](docs/sdks/suppliersandusers/README.md)
 
 * [getSuppliers](docs/sdks/suppliersandusers/README.md#getsuppliers) - Get suppliers
 * [getUsers](docs/sdks/suppliersandusers/README.md#getusers) - Get users of the company
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
