@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -41,7 +41,7 @@ export class GetAnalyticalValuesRequest extends SpeakeasyBase {
     pageSize?: number;
 }
 
-export class GetAnalyticalValues200ApplicationJSONData extends SpeakeasyBase {
+export class GetAnalyticalValuesData extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id: string;
@@ -58,11 +58,11 @@ export class GetAnalyticalValues200ApplicationJSONData extends SpeakeasyBase {
 /**
  * OK
  */
-export class GetAnalyticalValues200ApplicationJSON extends SpeakeasyBase {
+export class GetAnalyticalValuesResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "data" })
-    @Type(() => GetAnalyticalValues200ApplicationJSONData)
-    data: GetAnalyticalValues200ApplicationJSONData;
+    @Type(() => GetAnalyticalValuesData)
+    data: GetAnalyticalValuesData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "meta" })
@@ -93,5 +93,5 @@ export class GetAnalyticalValuesResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    getAnalyticalValues200ApplicationJSONObject?: GetAnalyticalValues200ApplicationJSON;
+    object?: GetAnalyticalValuesResponseBody;
 }

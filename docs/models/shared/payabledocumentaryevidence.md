@@ -1,9 +1,0 @@
-# PayableDocumentaryEvidence
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `notProvided`                                                                                         | [PayableDocumentaryEvidenceNotProvided](../../models/shared/payabledocumentaryevidencenotprovided.md) | :heavy_check_mark:                                                                                    | Not `null` only when no documentary evidence or justification has been provided                       |
-| `provided`                                                                                            | [PayableDocumentaryEvidenceProvided](../../models/shared/payabledocumentaryevidenceprovided.md)       | :heavy_check_mark:                                                                                    | Only `null` when no documentary evidence or justification has been provided                           |

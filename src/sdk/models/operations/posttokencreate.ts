@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PostTokenCreateRequestBodyGrantType {
+export enum PostTokenCreateGrantType {
     AuthorizationCode = "authorization_code",
 }
 
@@ -35,7 +35,7 @@ export class PostTokenCreateRequestBody extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "grant_type" })
-    grantType: PostTokenCreateRequestBodyGrantType;
+    grantType: PostTokenCreateGrantType;
 
     /**
      * This URI must match the URI used in the `/authorize` endpoint
@@ -45,14 +45,14 @@ export class PostTokenCreateRequestBody extends SpeakeasyBase {
     redirectUri: string;
 }
 
-export enum PostTokenCreate201ApplicationJSONTokenType {
+export enum TokenType {
     Bearer = "Bearer",
 }
 
 /**
  * Created
  */
-export class PostTokenCreate201ApplicationJSON extends SpeakeasyBase {
+export class PostTokenCreateResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "access_token" })
     accessToken: string;
@@ -73,7 +73,7 @@ export class PostTokenCreate201ApplicationJSON extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "token_type" })
-    tokenType: PostTokenCreate201ApplicationJSONTokenType;
+    tokenType: TokenType;
 }
 
 export class PostTokenCreateResponse extends SpeakeasyBase {
@@ -99,5 +99,5 @@ export class PostTokenCreateResponse extends SpeakeasyBase {
      * Created
      */
     @SpeakeasyMetadata()
-    postTokenCreate201ApplicationJSONObject?: PostTokenCreate201ApplicationJSON;
+    object?: PostTokenCreateResponseBody;
 }

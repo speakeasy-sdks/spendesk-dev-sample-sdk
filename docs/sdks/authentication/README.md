@@ -1,5 +1,5 @@
 # Authentication
-(*authentication*)
+(*.authentication*)
 
 ### Available Operations
 
@@ -13,7 +13,7 @@ Create access token
 
 ```typescript
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
-import { PostAccessTokenRequestBodyGrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
+import { GrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new SpendeskPublicAPI({
@@ -25,6 +25,7 @@ import { PostAccessTokenRequestBodyGrantType } from "Spendesk-Public-API/dist/sd
       scope: "bank-fee:read payable:read payable-attachment:read settlement:read wallet-load:read wallet-summary:read user:read supplier:read analytical-field:read",
     },
   });
+
 
   if (res.statusCode == 200) {
     // handle response

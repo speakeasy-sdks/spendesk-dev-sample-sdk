@@ -8,7 +8,7 @@ import { Expose, Transform } from "class-transformer";
 /**
  * Media type of the attachment.
  */
-export enum AttachmentMimeType {
+export enum MimeType {
     ImagePng = "image/png",
     ImageJpg = "image/jpg",
     ImageJpeg = "image/jpeg",
@@ -36,7 +36,7 @@ export class Attachment extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "mimeType" })
-    mimeType: AttachmentMimeType;
+    mimeType: MimeType;
 
     /**
      * URL to download attachment

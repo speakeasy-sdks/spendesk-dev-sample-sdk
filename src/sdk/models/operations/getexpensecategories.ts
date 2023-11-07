@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -35,7 +35,7 @@ export class GetExpenseCategoriesRequest extends SpeakeasyBase {
     pageSize?: number;
 }
 
-export class GetExpenseCategories200ApplicationJSONDataCostCenters extends SpeakeasyBase {
+export class CostCenters extends SpeakeasyBase {
     /**
      * Cost center ID
      */
@@ -51,14 +51,14 @@ export class GetExpenseCategories200ApplicationJSONDataCostCenters extends Speak
     name: string;
 }
 
-export class GetExpenseCategories200ApplicationJSONData extends SpeakeasyBase {
+export class GetExpenseCategoriesData extends SpeakeasyBase {
     /**
      * Array of cost centers
      */
-    @SpeakeasyMetadata({ elemType: GetExpenseCategories200ApplicationJSONDataCostCenters })
+    @SpeakeasyMetadata({ elemType: CostCenters })
     @Expose({ name: "costCenters" })
-    @Type(() => GetExpenseCategories200ApplicationJSONDataCostCenters)
-    costCenters: GetExpenseCategories200ApplicationJSONDataCostCenters[];
+    @Type(() => CostCenters)
+    costCenters: CostCenters[];
 
     /**
      * Expense category ID
@@ -78,11 +78,11 @@ export class GetExpenseCategories200ApplicationJSONData extends SpeakeasyBase {
 /**
  * OK
  */
-export class GetExpenseCategories200ApplicationJSON extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: GetExpenseCategories200ApplicationJSONData })
+export class GetExpenseCategoriesResponseBody extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: GetExpenseCategoriesData })
     @Expose({ name: "data" })
-    @Type(() => GetExpenseCategories200ApplicationJSONData)
-    data?: GetExpenseCategories200ApplicationJSONData[];
+    @Type(() => GetExpenseCategoriesData)
+    data?: GetExpenseCategoriesData[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "meta" })
@@ -113,5 +113,5 @@ export class GetExpenseCategoriesResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    getExpenseCategories200ApplicationJSONObject?: GetExpenseCategories200ApplicationJSON;
+    object?: GetExpenseCategoriesResponseBody;
 }

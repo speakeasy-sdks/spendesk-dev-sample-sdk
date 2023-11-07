@@ -1,5 +1,5 @@
 # SpendData
-(*spendData*)
+(*.spendData*)
 
 ### Available Operations
 
@@ -32,6 +32,7 @@ const operationSecurity: GetBankFeesSecurity = {
     ],
     sort: "+createdAt",
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -73,6 +74,7 @@ const operationSecurity: GetPayableAttachmentsSecurity = {
     payableId: "string",
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -101,7 +103,7 @@ GET payables endpoint
 
 ```typescript
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
-import { GetPayablesBookkeepingStatus, GetPayablesSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
+import { BookkeepingStatus, GetPayablesSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new SpendeskPublicAPI();
@@ -111,13 +113,14 @@ const operationSecurity: GetPayablesSecurity = {
 
   const res = await sdk.spendData.getPayables({
     bookkeepingStatus: [
-      GetPayablesBookkeepingStatus.Exported,
+      BookkeepingStatus.Exported,
     ],
     ids: [
       "string",
     ],
     sort: "-createdAt,+payableDate",
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -147,7 +150,7 @@ Get settlements
 
 ```typescript
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
-import { GetSettlementsPaidFrom, GetSettlementsSecurity, GetSettlementsState } from "Spendesk-Public-API/dist/sdk/models/operations";
+import { GetSettlementsSecurity, PaidFrom, State } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new SpendeskPublicAPI();
@@ -160,13 +163,14 @@ const operationSecurity: GetSettlementsSecurity = {
       "string",
     ],
     paidFrom: [
-      GetSettlementsPaidFrom.SpendeskAccount,
+      PaidFrom.SpendeskAccount,
     ],
     sort: "+createdAt",
     state: [
-      GetSettlementsState.Exported,
+      State.Exported,
     ],
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -207,6 +211,7 @@ const operationSecurity: GetWalletLoadsSecurity = {
   const res = await sdk.spendData.getWalletLoads({
     sort: "+createdAt",
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -249,6 +254,7 @@ const operationSecurity: GetWalletSummarySecurity = {
       "string",
     ],
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response

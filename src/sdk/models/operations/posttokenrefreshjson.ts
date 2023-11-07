@@ -6,28 +6,28 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export enum PostTokenRefreshApplicationJSONGrantType {
+export enum PostTokenRefreshJsonGrantType {
     RefreshToken = "refresh_token",
 }
 
-export class PostTokenRefreshApplicationJSON extends SpeakeasyBase {
+export class PostTokenRefreshJsonRequestBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "grant_type" })
-    grantType: PostTokenRefreshApplicationJSONGrantType;
+    grantType: PostTokenRefreshJsonGrantType;
 
     @SpeakeasyMetadata()
     @Expose({ name: "refresh_token" })
     refreshToken: string;
 }
 
-export enum PostTokenRefreshJson200ApplicationJSONTokenType {
+export enum PostTokenRefreshJsonTokenType {
     Bearer = "Bearer",
 }
 
 /**
  * OK
  */
-export class PostTokenRefreshJson200ApplicationJSON extends SpeakeasyBase {
+export class PostTokenRefreshJsonResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "access_token" })
     accessToken: string;
@@ -48,7 +48,7 @@ export class PostTokenRefreshJson200ApplicationJSON extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "token_type" })
-    tokenType: PostTokenRefreshJson200ApplicationJSONTokenType;
+    tokenType: PostTokenRefreshJsonTokenType;
 }
 
 export class PostTokenRefreshJsonResponse extends SpeakeasyBase {
@@ -74,5 +74,5 @@ export class PostTokenRefreshJsonResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    postTokenRefreshJSON200ApplicationJSONObject?: PostTokenRefreshJson200ApplicationJSON;
+    object?: PostTokenRefreshJsonResponseBody;
 }

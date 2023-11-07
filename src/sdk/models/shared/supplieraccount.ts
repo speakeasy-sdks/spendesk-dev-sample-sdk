@@ -10,7 +10,7 @@ export enum SupplierAccountDefaultFor {
     Invoices = "invoices",
 }
 
-export class SupplierAccountSuppliers extends SpeakeasyBase {
+export class Suppliers extends SpeakeasyBase {
     /**
      * Supplier ID
      */
@@ -65,8 +65,8 @@ export class SupplierAccount extends SpeakeasyBase {
     /**
      * Array of suppliers having this account assigned
      */
-    @SpeakeasyMetadata({ elemType: SupplierAccountSuppliers })
+    @SpeakeasyMetadata({ elemType: Suppliers })
     @Expose({ name: "suppliers" })
-    @Type(() => SupplierAccountSuppliers)
-    suppliers: SupplierAccountSuppliers[];
+    @Type(() => Suppliers)
+    suppliers: Suppliers[];
 }

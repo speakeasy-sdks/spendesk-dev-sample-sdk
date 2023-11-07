@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -15,7 +15,7 @@ export class GetPayablesSecurity extends SpeakeasyBase {
     clientAuthFlow?: string;
 }
 
-export enum GetPayablesBookkeepingStatus {
+export enum BookkeepingStatus {
     Created = "created",
     Prepared = "prepared",
     Unprepared = "unprepared",
@@ -29,7 +29,7 @@ export class GetPayablesRequest extends SpeakeasyBase {
      * Status of payables
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=bookkeepingStatus" })
-    bookkeepingStatus?: GetPayablesBookkeepingStatus[];
+    bookkeepingStatus?: BookkeepingStatus[];
 
     /**
      * Internal reference for pagination purposes
@@ -56,7 +56,7 @@ export class GetPayablesRequest extends SpeakeasyBase {
     sort?: string;
 }
 
-export class GetPayables200ApplicationJSONMetaPagination extends SpeakeasyBase {
+export class Pagination extends SpeakeasyBase {
     /**
      * Next URL to get the next page of a multi-page response.
      *
@@ -68,17 +68,17 @@ export class GetPayables200ApplicationJSONMetaPagination extends SpeakeasyBase {
     nextUrl: string;
 }
 
-export class GetPayables200ApplicationJSONMeta extends SpeakeasyBase {
+export class Meta extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "pagination" })
-    @Type(() => GetPayables200ApplicationJSONMetaPagination)
-    pagination: GetPayables200ApplicationJSONMetaPagination;
+    @Type(() => Pagination)
+    pagination: Pagination;
 }
 
 /**
  * OK
  */
-export class GetPayables200ApplicationJSON extends SpeakeasyBase {
+export class GetPayablesResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.Payable })
     @Expose({ name: "data" })
     @Type(() => shared.Payable)
@@ -86,8 +86,8 @@ export class GetPayables200ApplicationJSON extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "meta" })
-    @Type(() => GetPayables200ApplicationJSONMeta)
-    meta: GetPayables200ApplicationJSONMeta;
+    @Type(() => Meta)
+    meta: Meta;
 }
 
 export class GetPayablesResponse extends SpeakeasyBase {
@@ -113,5 +113,5 @@ export class GetPayablesResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    getPayables200ApplicationJSONObject?: GetPayables200ApplicationJSON;
+    object?: GetPayablesResponseBody;
 }

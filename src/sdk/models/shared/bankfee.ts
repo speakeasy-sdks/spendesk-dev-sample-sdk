@@ -11,7 +11,7 @@ import { Expose, Transform } from "class-transformer";
  * @remarks
  *  and `atmFee` refers to fees incurred at an atm, e.g. to withdraw cash.
  */
-export enum BankFeeKind {
+export enum Kind {
     FxFee = "fxFee",
     AtmFee = "atmFee",
     OtherFee = "otherFee",
@@ -66,7 +66,7 @@ export class BankFee extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "kind" })
-    kind: BankFeeKind;
+    kind: Kind;
 
     /**
      * The id of the Settlement related to this bank fee.

@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { RFCDate } from "../../types";
+import { RFCDate } from "../../../sdk/types";
 import { AnalyticalValue } from "./analyticalvalue";
 import { Expose, Transform, Type } from "class-transformer";
 
-export class PayableAllocationsSettlement extends SpeakeasyBase {
+export class PayableSettlement extends SpeakeasyBase {
     /**
      * Settlement Id
      */
@@ -23,7 +23,7 @@ export class PayableAllocationsSettlement extends SpeakeasyBase {
     link: string;
 }
 
-export class PayableAllocations extends SpeakeasyBase {
+export class Allocations extends SpeakeasyBase {
     /**
      * Payable amount allocated to settlements and bank fees.
      *
@@ -36,8 +36,8 @@ export class PayableAllocations extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "settlement" })
-    @Type(() => PayableAllocationsSettlement)
-    settlement: PayableAllocationsSettlement;
+    @Type(() => PayableSettlement)
+    settlement: PayableSettlement;
 }
 
 /**
@@ -55,7 +55,7 @@ export class PayableAllocations extends SpeakeasyBase {
  * | `unprepared` | Payable has been sent back to Bookkeep>Prepare |
  *
  */
-export enum PayableBookkeepingStatus {
+export enum BookkeepingStatus {
     Created = "created",
     Prepared = "prepared",
     Exported = "exported",
@@ -64,7 +64,7 @@ export enum PayableBookkeepingStatus {
     Unprepared = "unprepared",
 }
 
-export class PayableCounterpartyAccountPayable extends SpeakeasyBase {
+export class AccountPayable extends SpeakeasyBase {
     /**
      * Auxiliary code of the account payable, if available
      */
@@ -90,7 +90,7 @@ export class PayableCounterpartyAccountPayable extends SpeakeasyBase {
 /**
  * Type `employee` or `supplier`
  */
-export enum PayableCounterpartyType {
+export enum PayableType {
     Supplier = "supplier",
     Employee = "employee",
 }
@@ -98,11 +98,11 @@ export enum PayableCounterpartyType {
 /**
  * A payable is due to either a supplier or an employee
  */
-export class PayableCounterparty extends SpeakeasyBase {
+export class Counterparty extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "accountPayable" })
-    @Type(() => PayableCounterpartyAccountPayable)
-    accountPayable: PayableCounterpartyAccountPayable;
+    @Type(() => AccountPayable)
+    accountPayable: AccountPayable;
 
     /**
      * ID of counterparty
@@ -123,13 +123,13 @@ export class PayableCounterparty extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: PayableCounterpartyType;
+    type: PayableType;
 }
 
 /**
  * Not `null` only when no documentary evidence or justification has been provided
  */
-export class PayableDocumentaryEvidenceNotProvided extends SpeakeasyBase {
+export class NotProvided extends SpeakeasyBase {
     /**
      * Reason selected for not providing documentary evidence
      *
@@ -164,7 +164,7 @@ export class PayableDocumentaryEvidenceNotProvided extends SpeakeasyBase {
 /**
  * The type of documentary evidence provided
  */
-export enum PayableDocumentaryEvidenceProvidedType {
+export enum PayableSchemasType {
     CreditNote = "creditNote",
     Invoice = "invoice",
     MileageEntry = "mileageEntry",
@@ -176,7 +176,7 @@ export enum PayableDocumentaryEvidenceProvidedType {
 /**
  * Only `null` when no documentary evidence or justification has been provided
  */
-export class PayableDocumentaryEvidenceProvided extends SpeakeasyBase {
+export class Provided extends SpeakeasyBase {
     /**
      * The reason why documentary evidence has been declared invalid
      */
@@ -189,7 +189,7 @@ export class PayableDocumentaryEvidenceProvided extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: PayableDocumentaryEvidenceProvidedType;
+    type: PayableSchemasType;
 
     /**
      * `false` if documentary evidence has been declared invalid by the accoutant
@@ -199,28 +199,28 @@ export class PayableDocumentaryEvidenceProvided extends SpeakeasyBase {
     valid: boolean;
 }
 
-export class PayableDocumentaryEvidence extends SpeakeasyBase {
+export class DocumentaryEvidence extends SpeakeasyBase {
     /**
      * Not `null` only when no documentary evidence or justification has been provided
      */
     @SpeakeasyMetadata()
     @Expose({ name: "notProvided" })
-    @Type(() => PayableDocumentaryEvidenceNotProvided)
-    notProvided: PayableDocumentaryEvidenceNotProvided;
+    @Type(() => NotProvided)
+    notProvided: NotProvided;
 
     /**
      * Only `null` when no documentary evidence or justification has been provided
      */
     @SpeakeasyMetadata()
     @Expose({ name: "provided" })
-    @Type(() => PayableDocumentaryEvidenceProvided)
-    provided: PayableDocumentaryEvidenceProvided;
+    @Type(() => Provided)
+    provided: Provided;
 }
 
 /**
  * Expense account this line item is allocated to
  */
-export class PayableLineItemsExpenseAccount extends SpeakeasyBase {
+export class ExpenseAccount extends SpeakeasyBase {
     /**
      * Expense account accounting code
      */
@@ -246,7 +246,7 @@ export class PayableLineItemsExpenseAccount extends SpeakeasyBase {
 /**
  * Financial amounts of the line item
  */
-export class PayableLineItemsFinancial extends SpeakeasyBase {
+export class Financial extends SpeakeasyBase {
     /**
      * Gross amount of the line item (`netAmount` + `vatAmount`)
      *
@@ -292,7 +292,7 @@ export class PayableLineItemsFinancial extends SpeakeasyBase {
 /**
  * VAT account this line item is allocated to
  */
-export class PayableLineItemsVatAccount extends SpeakeasyBase {
+export class VatAccount extends SpeakeasyBase {
     /**
      * VAT account accounting code
      */
@@ -322,33 +322,33 @@ export class PayableLineItemsVatAccount extends SpeakeasyBase {
     rate: number;
 }
 
-export class PayableLineItems extends SpeakeasyBase {
+export class LineItems extends SpeakeasyBase {
     /**
      * Expense account this line item is allocated to
      */
     @SpeakeasyMetadata()
     @Expose({ name: "expenseAccount" })
-    @Type(() => PayableLineItemsExpenseAccount)
-    expenseAccount: PayableLineItemsExpenseAccount;
+    @Type(() => ExpenseAccount)
+    expenseAccount: ExpenseAccount;
 
     /**
      * Financial amounts of the line item
      */
     @SpeakeasyMetadata()
     @Expose({ name: "financial" })
-    @Type(() => PayableLineItemsFinancial)
-    financial: PayableLineItemsFinancial;
+    @Type(() => Financial)
+    financial: Financial;
 
     /**
      * VAT account this line item is allocated to
      */
     @SpeakeasyMetadata()
     @Expose({ name: "vatAccount" })
-    @Type(() => PayableLineItemsVatAccount)
-    vatAccount: PayableLineItemsVatAccount;
+    @Type(() => VatAccount)
+    vatAccount: VatAccount;
 }
 
-export class PayableLinks extends SpeakeasyBase {
+export class Links extends SpeakeasyBase {
     /**
      * Link to attachments endpoint with the relevant `payableId`
      */
@@ -374,7 +374,7 @@ export class PayableLinks extends SpeakeasyBase {
  *   `perDiemAllowance` | A per diem expense submitted and approved |
  *   `reverseBill` | A refund or a late return (aka cash return) |
  */
-export enum PayableType {
+export enum TypeT {
     ExpenseClaim = "expenseClaim",
     InvoicePurchase = "invoicePurchase",
     CreditNote = "creditNote",
@@ -404,10 +404,10 @@ export class Payable extends SpeakeasyBase {
     /**
      * An array of allocations for the payable. A payable can have a settlement or a reversal allocated to it
      */
-    @SpeakeasyMetadata({ elemType: PayableAllocations })
+    @SpeakeasyMetadata({ elemType: Allocations })
     @Expose({ name: "allocations" })
-    @Type(() => PayableAllocations)
-    allocations: PayableAllocations[];
+    @Type(() => Allocations)
+    allocations: Allocations[];
 
     /**
      * If the payment was made in a foreign currency, this amount will be the one in the payment currency.
@@ -445,7 +445,7 @@ export class Payable extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "bookkeepingStatus" })
-    bookkeepingStatus: PayableBookkeepingStatus;
+    bookkeepingStatus: BookkeepingStatus;
 
     /**
      * The ID of the company (this could be a wallet or an entity)
@@ -473,8 +473,8 @@ export class Payable extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "counterparty" })
-    @Type(() => PayableCounterparty)
-    counterparty: PayableCounterparty;
+    @Type(() => Counterparty)
+    counterparty: Counterparty;
 
     /**
      * The date-time the payable got created in the system
@@ -510,8 +510,8 @@ export class Payable extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "documentaryEvidence" })
-    @Type(() => PayableDocumentaryEvidence)
-    documentaryEvidence: PayableDocumentaryEvidence;
+    @Type(() => DocumentaryEvidence)
+    documentaryEvidence: DocumentaryEvidence;
 
     /**
      * The date this payable was first exported via an accounting export. [ISO 8601 date format](https://www.iso.org/iso-8601-date-and-time-format.html)
@@ -578,15 +578,15 @@ export class Payable extends SpeakeasyBase {
     /**
      * Line items of the payable
      */
-    @SpeakeasyMetadata({ elemType: PayableLineItems })
+    @SpeakeasyMetadata({ elemType: LineItems })
     @Expose({ name: "lineItems" })
-    @Type(() => PayableLineItems)
-    lineItems: PayableLineItems[];
+    @Type(() => LineItems)
+    lineItems: LineItems[];
 
-    @SpeakeasyMetadata({ elemType: PayableLinks })
+    @SpeakeasyMetadata({ elemType: Links })
     @Expose({ name: "links" })
-    @Type(() => PayableLinks)
-    links: PayableLinks[];
+    @Type(() => Links)
+    links: Links[];
 
     /**
      * For expenses - this is the date of the expense.
@@ -641,7 +641,7 @@ export class Payable extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: PayableType;
+    type: TypeT;
 
     /**
      * The ID of the Spendesk user who submitted the payable

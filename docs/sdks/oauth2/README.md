@@ -1,5 +1,5 @@
 # OAuth2
-(*oAuth2*)
+(*.oAuth2*)
 
 ### Available Operations
 
@@ -16,7 +16,7 @@ Request user authorization for an OAuth2 connection
 
 ```typescript
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
-import { GetAuthorizeCodeChallengeMethod, GetAuthorizeResponseType } from "Spendesk-Public-API/dist/sdk/models/operations";
+import { CodeChallengeMethod, ResponseType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new SpendeskPublicAPI({
@@ -26,11 +26,12 @@ import { GetAuthorizeCodeChallengeMethod, GetAuthorizeResponseType } from "Spend
   const res = await sdk.oAuth2.getAuthorize({
     clientId: "string",
     codeChallenge: "string",
-    codeChallengeMethod: GetAuthorizeCodeChallengeMethod.S256,
+    codeChallengeMethod: CodeChallengeMethod.S256,
     redirectUri: "string",
-    responseType: GetAuthorizeResponseType.Code,
+    responseType: ResponseType.Code,
     scope: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -59,7 +60,7 @@ Request access token with an authorization code
 
 ```typescript
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
-import { PostTokenCreateRequestBodyGrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
+import { PostTokenCreateGrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new SpendeskPublicAPI({
@@ -71,9 +72,10 @@ import { PostTokenCreateRequestBodyGrantType } from "Spendesk-Public-API/dist/sd
     clientSecret: "string",
     code: "string",
     codeVerifier: "string",
-    grantType: PostTokenCreateRequestBodyGrantType.AuthorizationCode,
+    grantType: PostTokenCreateGrantType.AuthorizationCode,
     redirectUri: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -102,7 +104,7 @@ Request a new access token with a refresh token
 
 ```typescript
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
-import { PostTokenRefreshApplicationJSONGrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
+import { PostTokenRefreshJsonGrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new SpendeskPublicAPI({
@@ -110,9 +112,10 @@ import { PostTokenRefreshApplicationJSONGrantType } from "Spendesk-Public-API/di
   });
 
   const res = await sdk.oAuth2.postTokenRefreshJson({
-    grantType: PostTokenRefreshApplicationJSONGrantType.RefreshToken,
+    grantType: PostTokenRefreshJsonGrantType.RefreshToken,
     refreshToken: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -124,7 +127,7 @@ import { PostTokenRefreshApplicationJSONGrantType } from "Spendesk-Public-API/di
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PostTokenRefreshApplicationJSON](../../models/operations/posttokenrefreshapplicationjson.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `request`                                                                                                | [operations.PostTokenRefreshJsonRequestBody](../../models/operations/posttokenrefreshjsonrequestbody.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 | `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
@@ -147,7 +150,8 @@ import { SpendeskPublicAPI } from "Spendesk-Public-API";
     clientAuthFlow: "",
   });
 
-  const res = await sdk.oAuth2.postTokenRefreshRaw("GKqe8!pEf(" as bytes <<<>>>);
+  const res = await sdk.oAuth2.postTokenRefreshRaw(new TextEncoder().encode("0x9aDA50C8A1"));
+
 
   if (res.statusCode == 200) {
     // handle response

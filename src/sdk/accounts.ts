@@ -3,8 +3,8 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -71,9 +71,9 @@ export class Accounts {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getAnalyticalFields200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetAnalyticalFields200ApplicationJSON
+                        operations.GetAnalyticalFieldsResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -171,9 +171,9 @@ export class Accounts {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getAnalyticalValues200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetAnalyticalValues200ApplicationJSON
+                        operations.GetAnalyticalValuesResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -266,9 +266,9 @@ export class Accounts {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getCostCenters200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetCostCenters200ApplicationJSON
+                        operations.GetCostCentersResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -362,9 +362,9 @@ export class Accounts {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getEmployeeAccounts200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetEmployeeAccounts200ApplicationJSON
+                        operations.GetEmployeeAccountsResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -458,9 +458,9 @@ export class Accounts {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getExpenseCategories200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetExpenseCategories200ApplicationJSON
+                        operations.GetExpenseCategoriesResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -554,9 +554,9 @@ export class Accounts {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getSupplierAccounts200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetSupplierAccounts200ApplicationJSON
+                        operations.GetSupplierAccountsResponseBody
                     );
                 } else {
                     throw new errors.SDKError(

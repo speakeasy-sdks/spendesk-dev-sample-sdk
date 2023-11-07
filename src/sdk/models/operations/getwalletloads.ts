@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -50,7 +50,7 @@ export class GetWalletLoadsRequest extends SpeakeasyBase {
 /**
  * OK
  */
-export class GetWalletLoads200ApplicationJSON extends SpeakeasyBase {
+export class GetWalletLoadsResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.WalletLoad })
     @Expose({ name: "data" })
     @Type(() => shared.WalletLoad)
@@ -85,5 +85,5 @@ export class GetWalletLoadsResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    getWalletLoads200ApplicationJSONObject?: GetWalletLoads200ApplicationJSON;
+    object?: GetWalletLoadsResponseBody;
 }

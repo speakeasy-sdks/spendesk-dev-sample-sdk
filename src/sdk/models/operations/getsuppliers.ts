@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -38,7 +38,7 @@ export class GetSuppliersRequest extends SpeakeasyBase {
 /**
  * OK
  */
-export class GetSuppliers200ApplicationJSON extends SpeakeasyBase {
+export class GetSuppliersResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.Supplier })
     @Expose({ name: "data" })
     @Type(() => shared.Supplier)
@@ -73,5 +73,5 @@ export class GetSuppliersResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    getSuppliers200ApplicationJSONObject?: GetSuppliers200ApplicationJSON;
+    object?: GetSuppliersResponseBody;
 }

@@ -1,0 +1,13 @@
+# PostTokenRefreshJsonResponseBody
+
+OK
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `accessToken`                                                                                        | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `refreshToken`                                                                                       | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `scope`                                                                                              | *string*                                                                                             | :heavy_check_mark:                                                                                   | space separated list of granted scopes<br/>                                                          |
+| `tokenType`                                                                                          | [operations.PostTokenRefreshJsonTokenType](../../models/operations/posttokenrefreshjsontokentype.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

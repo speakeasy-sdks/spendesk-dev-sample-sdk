@@ -8,7 +8,7 @@ import { Expose } from "class-transformer";
 /**
  * An account can be set as default for all employees
  */
-export enum EmployeeAccountDefaultFor {
+export enum DefaultFor {
     Employees = "employees",
     LessThanNilGreaterThan = "<nil>",
 }
@@ -26,7 +26,7 @@ export class EmployeeAccount extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "defaultFor" })
-    defaultFor: EmployeeAccountDefaultFor;
+    defaultFor: DefaultFor;
 
     /**
      * Account description (if exists)

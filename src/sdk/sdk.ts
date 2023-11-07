@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
+import * as shared from "../sdk/models/shared";
 import { Accounts } from "./accounts";
 import { Authentication } from "./authentication";
-import * as shared from "./models/shared";
 import { OAuth2 } from "./oauth2";
 import { SpendData } from "./spenddata";
 import { SuppliersAndUsers } from "./suppliersandusers";
@@ -59,9 +59,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "0.1";
-    sdkVersion = "0.3.0";
-    genVersion = "2.171.0";
-    userAgent = "speakeasy-sdk/typescript 0.3.0 2.171.0 0.1 Spendesk-Public-API";
+    sdkVersion = "0.4.0";
+    genVersion = "2.181.1";
+    userAgent = "speakeasy-sdk/typescript 0.4.0 2.181.1 0.1 Spendesk-Public-API";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -77,8 +77,8 @@ export class SDKConfiguration {
 export class SpendeskPublicAPI {
     public accounts: Accounts;
     public authentication: Authentication;
-    public oAuth2: OAuth2;
     public spendData: SpendData;
+    public oAuth2: OAuth2;
     public suppliersAndUsers: SuppliersAndUsers;
 
     private sdkConfiguration: SDKConfiguration;
@@ -102,8 +102,8 @@ export class SpendeskPublicAPI {
 
         this.accounts = new Accounts(this.sdkConfiguration);
         this.authentication = new Authentication(this.sdkConfiguration);
-        this.oAuth2 = new OAuth2(this.sdkConfiguration);
         this.spendData = new SpendData(this.sdkConfiguration);
+        this.oAuth2 = new OAuth2(this.sdkConfiguration);
         this.suppliersAndUsers = new SuppliersAndUsers(this.sdkConfiguration);
     }
 }

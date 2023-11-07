@@ -9,7 +9,7 @@ import { Expose } from "class-transformer";
 /**
  * OAuth2 grant type: `client_credentials`
  */
-export enum PostAccessTokenRequestBodyGrantType {
+export enum GrantType {
     ClientCredentials = "client_credentials",
 }
 
@@ -19,7 +19,7 @@ export class PostAccessTokenRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "grant_type" })
-    grantType?: PostAccessTokenRequestBodyGrantType;
+    grantType?: GrantType;
 
     /**
      * Optional field to restrict the scope of the token. The default scope will match the scope defined in the front end when generating your API client id and secret.
@@ -42,7 +42,7 @@ export class PostAccessTokenRequest extends SpeakeasyBase {
 /**
  * OK
  */
-export class PostAccessToken200ApplicationJSON extends SpeakeasyBase {
+export class PostAccessTokenResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "access_token" })
     accessToken: string;
@@ -78,5 +78,5 @@ export class PostAccessTokenResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    postAccessToken200ApplicationJSONObject?: PostAccessToken200ApplicationJSON;
+    object?: PostAccessTokenResponseBody;
 }

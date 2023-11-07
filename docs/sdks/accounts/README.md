@@ -1,5 +1,5 @@
 # Accounts
-(*accounts*)
+(*.accounts*)
 
 ### Available Operations
 
@@ -27,6 +27,7 @@ const operationSecurity: GetAnalyticalFieldsSecurity = {
 };
 
   const res = await sdk.accounts.getAnalyticalFields({}, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -67,6 +68,7 @@ const operationSecurity: GetAnalyticalValuesSecurity = {
   const res = await sdk.accounts.getAnalyticalValues({
     fieldId: "string",
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -109,6 +111,7 @@ const operationSecurity: GetCostCentersSecurity = {
       "string",
     ],
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -155,6 +158,7 @@ const operationSecurity: GetEmployeeAccountsSecurity = {
     ],
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -197,6 +201,7 @@ const operationSecurity: GetExpenseCategoriesSecurity = {
     ],
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -238,6 +243,7 @@ const operationSecurity: GetSupplierAccountsSecurity = {
       "string",
     ],
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response

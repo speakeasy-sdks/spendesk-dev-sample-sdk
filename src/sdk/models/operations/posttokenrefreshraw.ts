@@ -6,16 +6,16 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export class PostTokenRefreshApplicationXML extends SpeakeasyBase {}
+export class PostTokenRefreshRequestBody extends SpeakeasyBase {}
 
-export enum PostTokenRefreshRaw200ApplicationJSONTokenType {
+export enum PostTokenRefreshRawTokenType {
     Bearer = "Bearer",
 }
 
 /**
  * OK
  */
-export class PostTokenRefreshRaw200ApplicationJSON extends SpeakeasyBase {
+export class PostTokenRefreshRawResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "access_token" })
     accessToken: string;
@@ -36,7 +36,7 @@ export class PostTokenRefreshRaw200ApplicationJSON extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "token_type" })
-    tokenType: PostTokenRefreshRaw200ApplicationJSONTokenType;
+    tokenType: PostTokenRefreshRawTokenType;
 }
 
 export class PostTokenRefreshRawResponse extends SpeakeasyBase {
@@ -62,5 +62,5 @@ export class PostTokenRefreshRawResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    postTokenRefreshRaw200ApplicationJSONObject?: PostTokenRefreshRaw200ApplicationJSON;
+    object?: PostTokenRefreshRawResponseBody;
 }

@@ -1,5 +1,5 @@
 # SuppliersAndUsers
-(*suppliersAndUsers*)
+(*.suppliersAndUsers*)
 
 ### Available Operations
 
@@ -23,6 +23,7 @@ const operationSecurity: GetSuppliersSecurity = {
 };
 
   const res = await sdk.suppliersAndUsers.getSuppliers({}, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -61,6 +62,7 @@ const operationSecurity: GetUsersSecurity = {
 };
 
   const res = await sdk.suppliersAndUsers.getUsers({}, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -8,14 +8,14 @@ import { AxiosResponse } from "axios";
 /**
  * Always `S256`
  */
-export enum GetAuthorizeCodeChallengeMethod {
+export enum CodeChallengeMethod {
     S256 = "S256",
 }
 
 /**
  * Always `code`
  */
-export enum GetAuthorizeResponseType {
+export enum ResponseType {
     Code = "code",
 }
 
@@ -36,7 +36,7 @@ export class GetAuthorizeRequest extends SpeakeasyBase {
      * Always `S256`
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=code_challenge_method" })
-    codeChallengeMethod: GetAuthorizeCodeChallengeMethod;
+    codeChallengeMethod: CodeChallengeMethod;
 
     /**
      * URI to redirect the user after connection is authorized. If successful, the redirect URL will look like: `{redirect_uri}?code={auth_code}&state={state}`, where `code` is the authorization code to be used in `POST /token/create`, and `state` allows you to verify the integrity of the connection.
@@ -48,7 +48,7 @@ export class GetAuthorizeRequest extends SpeakeasyBase {
      * Always `code`
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=response_type" })
-    responseType: GetAuthorizeResponseType;
+    responseType: ResponseType;
 
     /**
      * Space separated list of requested scopes

@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -173,9 +173,9 @@ export class OAuth2 {
         switch (true) {
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.postTokenCreate201ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.PostTokenCreate201ApplicationJSON
+                        operations.PostTokenCreateResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -220,11 +220,11 @@ export class OAuth2 {
      * Request a new access token with a refresh token
      */
     async postTokenRefreshJson(
-        req: operations.PostTokenRefreshApplicationJSON,
+        req: operations.PostTokenRefreshJsonRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostTokenRefreshJsonResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostTokenRefreshApplicationJSON(req);
+            req = new operations.PostTokenRefreshJsonRequestBody(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -286,9 +286,9 @@ export class OAuth2 {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.postTokenRefreshJSON200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.PostTokenRefreshJson200ApplicationJSON
+                        operations.PostTokenRefreshJsonResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -395,9 +395,9 @@ export class OAuth2 {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.postTokenRefreshRaw200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.PostTokenRefreshRaw200ApplicationJSON
+                        operations.PostTokenRefreshRawResponseBody
                     );
                 } else {
                     throw new errors.SDKError(

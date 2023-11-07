@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -35,7 +35,7 @@ export class GetCostCentersRequest extends SpeakeasyBase {
     pageSize?: number;
 }
 
-export class GetCostCenters200ApplicationJSONData extends SpeakeasyBase {
+export class GetCostCentersData extends SpeakeasyBase {
     /**
      * Cost center co-owner ID
      */
@@ -68,11 +68,11 @@ export class GetCostCenters200ApplicationJSONData extends SpeakeasyBase {
 /**
  * OK
  */
-export class GetCostCenters200ApplicationJSON extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: GetCostCenters200ApplicationJSONData })
+export class GetCostCentersResponseBody extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: GetCostCentersData })
     @Expose({ name: "data" })
-    @Type(() => GetCostCenters200ApplicationJSONData)
-    data: GetCostCenters200ApplicationJSONData[];
+    @Type(() => GetCostCentersData)
+    data: GetCostCentersData[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "meta" })
@@ -103,5 +103,5 @@ export class GetCostCentersResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    getCostCenters200ApplicationJSONObject?: GetCostCenters200ApplicationJSON;
+    object?: GetCostCentersResponseBody;
 }

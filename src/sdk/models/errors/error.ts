@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { classToPlain, Expose, Type } from "class-transformer";
 
-export class ErrorErrors extends SpeakeasyBase {
+export class Errors extends SpeakeasyBase {
     /**
      * Readable error message that could be displayed in a UI
      */
@@ -29,10 +29,10 @@ export class ErrorErrors extends SpeakeasyBase {
 }
 
 export class ErrorT extends Error {
-    @SpeakeasyMetadata({ elemType: ErrorErrors })
+    @SpeakeasyMetadata({ elemType: Errors })
     @Expose({ name: "errors" })
-    @Type(() => ErrorErrors)
-    errors?: ErrorErrors[];
+    @Type(() => Errors)
+    errors?: Errors[];
 
     constructor(err?: ErrorT) {
         super();

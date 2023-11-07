@@ -3,8 +3,8 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -70,9 +70,9 @@ export class SpendData {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getBankFees200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetBankFees200ApplicationJSON
+                        operations.GetBankFeesResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -166,9 +166,9 @@ export class SpendData {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getPayableAttachments200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetPayableAttachments200ApplicationJSON
+                        operations.GetPayableAttachmentsResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -261,9 +261,9 @@ export class SpendData {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getPayables200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetPayables200ApplicationJSON
+                        operations.GetPayablesResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -356,9 +356,9 @@ export class SpendData {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getSettlements200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetSettlements200ApplicationJSON
+                        operations.GetSettlementsResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -451,9 +451,9 @@ export class SpendData {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getWalletLoads200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetWalletLoads200ApplicationJSON
+                        operations.GetWalletLoadsResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -546,9 +546,9 @@ export class SpendData {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getWalletSummary200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetWalletSummary200ApplicationJSON
+                        operations.GetWalletSummaryResponseBody
                     );
                 } else {
                     throw new errors.SDKError(

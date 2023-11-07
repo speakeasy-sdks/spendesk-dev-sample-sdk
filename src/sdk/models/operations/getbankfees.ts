@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -56,7 +56,7 @@ export class GetBankFeesRequest extends SpeakeasyBase {
 /**
  * OK
  */
-export class GetBankFees200ApplicationJSON extends SpeakeasyBase {
+export class GetBankFeesResponseBody extends SpeakeasyBase {
     /**
      * The list of bank fees
      */
@@ -94,5 +94,5 @@ export class GetBankFeesResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    getBankFees200ApplicationJSONObject?: GetBankFees200ApplicationJSON;
+    object?: GetBankFeesResponseBody;
 }

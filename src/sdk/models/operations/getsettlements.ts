@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -15,12 +15,12 @@ export class GetSettlementsSecurity extends SpeakeasyBase {
     clientAuthFlow?: string;
 }
 
-export enum GetSettlementsPaidFrom {
+export enum PaidFrom {
     SpendeskAccount = "spendeskAccount",
     ExternalAccount = "externalAccount",
 }
 
-export enum GetSettlementsState {
+export enum State {
     Created = "created",
     Exported = "exported",
     FailedToExport = "failedToExport",
@@ -55,7 +55,7 @@ export class GetSettlementsRequest extends SpeakeasyBase {
      * Bank account used for the settlement
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=paidFrom" })
-    paidFrom?: GetSettlementsPaidFrom[];
+    paidFrom?: PaidFrom[];
 
     /**
      * Sort by creation date
@@ -67,13 +67,13 @@ export class GetSettlementsRequest extends SpeakeasyBase {
      * Status of settlements to be returned
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=state" })
-    state?: GetSettlementsState[];
+    state?: State[];
 }
 
 /**
  * OK
  */
-export class GetSettlements200ApplicationJSON extends SpeakeasyBase {
+export class GetSettlementsResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.Settlement })
     @Expose({ name: "data" })
     @Type(() => shared.Settlement)
@@ -108,5 +108,5 @@ export class GetSettlementsResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    getSettlements200ApplicationJSONObject?: GetSettlements200ApplicationJSON;
+    object?: GetSettlementsResponseBody;
 }

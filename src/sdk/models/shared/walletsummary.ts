@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export class WalletSummaryAllocatedOnCards extends SpeakeasyBase {
+export class AllocatedOnCards extends SpeakeasyBase {
     /**
      * Amount allocated on card to physical.
      *
@@ -47,7 +47,7 @@ export class WalletSummaryAllocatedOnCards extends SpeakeasyBase {
     totalAllocatedAmount: number;
 }
 
-export class WalletSummaryScheduledTransfersAmount extends SpeakeasyBase {
+export class ScheduledTransfersAmount extends SpeakeasyBase {
     /**
      * Amount allocated to scheduled transfers.
      *
@@ -82,15 +82,15 @@ export class WalletSummaryScheduledTransfersAmount extends SpeakeasyBase {
 /**
  * Status of wallet
  */
-export enum WalletSummaryStatus {
+export enum Status {
     Active = "active",
 }
 
 export class WalletSummary extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "allocatedOnCards" })
-    @Type(() => WalletSummaryAllocatedOnCards)
-    allocatedOnCards: WalletSummaryAllocatedOnCards;
+    @Type(() => AllocatedOnCards)
+    allocatedOnCards: AllocatedOnCards;
 
     /**
      * Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html).
@@ -115,15 +115,15 @@ export class WalletSummary extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "scheduledTransfersAmount" })
-    @Type(() => WalletSummaryScheduledTransfersAmount)
-    scheduledTransfersAmount: WalletSummaryScheduledTransfersAmount;
+    @Type(() => ScheduledTransfersAmount)
+    scheduledTransfersAmount: ScheduledTransfersAmount;
 
     /**
      * Status of wallet
      */
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
-    status: WalletSummaryStatus;
+    status: Status;
 
     /**
      * The total amount allocated on cards & scheduled transfers

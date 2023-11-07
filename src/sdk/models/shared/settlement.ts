@@ -17,7 +17,7 @@ export class SettlementLinks extends SpeakeasyBase {
 /**
  * Medium: `card` or `wireTransfer`
  */
-export enum SettlementMedium {
+export enum Medium {
     Card = "card",
     WireTransfer = "wireTransfer",
 }
@@ -28,7 +28,7 @@ export enum SettlementMedium {
  * @remarks
  * For card payments the value is always `spendeskAccount`
  */
-export enum SettlementPaidFrom {
+export enum PaidFrom {
     SpendeskAccount = "spendeskAccount",
     ExternalAccount = "externalAccount",
 }
@@ -45,7 +45,7 @@ export enum SettlementPaidFrom {
  *  `failedToExport` | Tried to export but failed
  *
  */
-export enum SettlementState {
+export enum State {
     Created = "created",
     Exported = "exported",
     FailedToExport = "failedToExport",
@@ -160,7 +160,7 @@ export class Settlement extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "medium" })
-    medium: SettlementMedium;
+    medium: Medium;
 
     /**
      * The bank account the wire transfer is emitted from (Spendesk or external).
@@ -170,7 +170,7 @@ export class Settlement extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "paidFrom" })
-    paidFrom: SettlementPaidFrom;
+    paidFrom: PaidFrom;
 
     /**
      * Status of the settlement:
@@ -186,7 +186,7 @@ export class Settlement extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "state" })
-    state: SettlementState;
+    state: State;
 
     /**
      * Description of transaction
