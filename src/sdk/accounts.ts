@@ -34,7 +34,7 @@ export class Accounts {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/analytical-fields";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/analytical-fields";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetAnalyticalFieldsSecurity(security);
@@ -48,7 +48,7 @@ export class Accounts {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -130,7 +130,7 @@ export class Accounts {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v0/analytical-fields/{fieldId}/values",
             req
@@ -148,7 +148,7 @@ export class Accounts {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -230,7 +230,7 @@ export class Accounts {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/cost-centers";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/cost-centers";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetCostCentersSecurity(security);
@@ -244,7 +244,7 @@ export class Accounts {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -325,7 +325,7 @@ export class Accounts {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/employee-accounts";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/employee-accounts";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetEmployeeAccountsSecurity(security);
@@ -339,7 +339,7 @@ export class Accounts {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -421,7 +421,7 @@ export class Accounts {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/expense-categories";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/expense-categories";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetExpenseCategoriesSecurity(security);
@@ -435,7 +435,7 @@ export class Accounts {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -517,7 +517,7 @@ export class Accounts {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/supplier-accounts";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/supplier-accounts";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetSupplierAccountsSecurity(security);
@@ -531,7 +531,7 @@ export class Accounts {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",

@@ -1,9 +1,0 @@
-# PostTokenRefreshJsonRequestBody
-
-
-## Fields
-
-| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `grantType`                                                                                          | [operations.PostTokenRefreshJsonGrantType](../../models/operations/posttokenrefreshjsongranttype.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
-| `refreshToken`                                                                                       | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

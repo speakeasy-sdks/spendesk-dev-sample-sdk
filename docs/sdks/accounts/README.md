@@ -1,5 +1,5 @@
 # Accounts
-(*.accounts*)
+(*accounts*)
 
 ### Available Operations
 
@@ -28,7 +28,6 @@ const operationSecurity: GetAnalyticalFieldsSecurity = {
 
   const res = await sdk.accounts.getAnalyticalFields({}, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -37,17 +36,22 @@ const operationSecurity: GetAnalyticalFieldsSecurity = {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.GetAnalyticalFieldsRequest](../../models/operations/getanalyticalfieldsrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `security`                                                                                       | [operations.GetAnalyticalFieldsSecurity](../../models/operations/getanalyticalfieldssecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAnalyticalFieldsRequest](../../sdk/models/operations/getanalyticalfieldsrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [operations.GetAnalyticalFieldsSecurity](../../sdk/models/operations/getanalyticalfieldssecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.GetAnalyticalFieldsResponse](../../models/operations/getanalyticalfieldsresponse.md)>**
+**Promise<[operations.GetAnalyticalFieldsResponse](../../sdk/models/operations/getanalyticalfieldsresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getAnalyticalValues
 
@@ -69,7 +73,6 @@ const operationSecurity: GetAnalyticalValuesSecurity = {
     fieldId: "string",
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -78,17 +81,22 @@ const operationSecurity: GetAnalyticalValuesSecurity = {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.GetAnalyticalValuesRequest](../../models/operations/getanalyticalvaluesrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `security`                                                                                       | [operations.GetAnalyticalValuesSecurity](../../models/operations/getanalyticalvaluessecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAnalyticalValuesRequest](../../sdk/models/operations/getanalyticalvaluesrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [operations.GetAnalyticalValuesSecurity](../../sdk/models/operations/getanalyticalvaluessecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.GetAnalyticalValuesResponse](../../models/operations/getanalyticalvaluesresponse.md)>**
+**Promise<[operations.GetAnalyticalValuesResponse](../../sdk/models/operations/getanalyticalvaluesresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getCostCenters
 
@@ -112,7 +120,6 @@ const operationSecurity: GetCostCentersSecurity = {
     ],
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -121,17 +128,22 @@ const operationSecurity: GetCostCentersSecurity = {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.GetCostCentersRequest](../../models/operations/getcostcentersrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.GetCostCentersSecurity](../../models/operations/getcostcenterssecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.GetCostCentersRequest](../../sdk/models/operations/getcostcentersrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.GetCostCentersSecurity](../../sdk/models/operations/getcostcenterssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.GetCostCentersResponse](../../models/operations/getcostcentersresponse.md)>**
+**Promise<[operations.GetCostCentersResponse](../../sdk/models/operations/getcostcentersresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getEmployeeAccounts
 
@@ -158,7 +170,6 @@ const operationSecurity: GetEmployeeAccountsSecurity = {
     ],
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -167,17 +178,22 @@ const operationSecurity: GetEmployeeAccountsSecurity = {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.GetEmployeeAccountsRequest](../../models/operations/getemployeeaccountsrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `security`                                                                                       | [operations.GetEmployeeAccountsSecurity](../../models/operations/getemployeeaccountssecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetEmployeeAccountsRequest](../../sdk/models/operations/getemployeeaccountsrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [operations.GetEmployeeAccountsSecurity](../../sdk/models/operations/getemployeeaccountssecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.GetEmployeeAccountsResponse](../../models/operations/getemployeeaccountsresponse.md)>**
+**Promise<[operations.GetEmployeeAccountsResponse](../../sdk/models/operations/getemployeeaccountsresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getExpenseCategories
 
@@ -201,7 +217,6 @@ const operationSecurity: GetExpenseCategoriesSecurity = {
     ],
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -210,17 +225,22 @@ const operationSecurity: GetExpenseCategoriesSecurity = {
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.GetExpenseCategoriesRequest](../../models/operations/getexpensecategoriesrequest.md)   | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `security`                                                                                         | [operations.GetExpenseCategoriesSecurity](../../models/operations/getexpensecategoriessecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.GetExpenseCategoriesRequest](../../sdk/models/operations/getexpensecategoriesrequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `security`                                                                                             | [operations.GetExpenseCategoriesSecurity](../../sdk/models/operations/getexpensecategoriessecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
 
 
 ### Response
 
-**Promise<[operations.GetExpenseCategoriesResponse](../../models/operations/getexpensecategoriesresponse.md)>**
+**Promise<[operations.GetExpenseCategoriesResponse](../../sdk/models/operations/getexpensecategoriesresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getSupplierAccounts
 
@@ -244,7 +264,6 @@ const operationSecurity: GetSupplierAccountsSecurity = {
     ],
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -253,14 +272,19 @@ const operationSecurity: GetSupplierAccountsSecurity = {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.GetSupplierAccountsRequest](../../models/operations/getsupplieraccountsrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `security`                                                                                       | [operations.GetSupplierAccountsSecurity](../../models/operations/getsupplieraccountssecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetSupplierAccountsRequest](../../sdk/models/operations/getsupplieraccountsrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [operations.GetSupplierAccountsSecurity](../../sdk/models/operations/getsupplieraccountssecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.GetSupplierAccountsResponse](../../models/operations/getsupplieraccountsresponse.md)>**
+**Promise<[operations.GetSupplierAccountsResponse](../../sdk/models/operations/getsupplieraccountsresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |

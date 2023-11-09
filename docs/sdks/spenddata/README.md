@@ -1,5 +1,5 @@
 # SpendData
-(*.spendData*)
+(*spendData*)
 
 ### Available Operations
 
@@ -33,7 +33,6 @@ const operationSecurity: GetBankFeesSecurity = {
     sort: "+createdAt",
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -42,17 +41,22 @@ const operationSecurity: GetBankFeesSecurity = {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.GetBankFeesRequest](../../models/operations/getbankfeesrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.GetBankFeesSecurity](../../models/operations/getbankfeessecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
-| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.GetBankFeesRequest](../../sdk/models/operations/getbankfeesrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `security`                                                                           | [operations.GetBankFeesSecurity](../../sdk/models/operations/getbankfeessecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
 
 
 ### Response
 
-**Promise<[operations.GetBankFeesResponse](../../models/operations/getbankfeesresponse.md)>**
+**Promise<[operations.GetBankFeesResponse](../../sdk/models/operations/getbankfeesresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getPayableAttachments
 
@@ -74,7 +78,6 @@ const operationSecurity: GetPayableAttachmentsSecurity = {
     payableId: "string",
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -83,17 +86,22 @@ const operationSecurity: GetPayableAttachmentsSecurity = {
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetPayableAttachmentsRequest](../../models/operations/getpayableattachmentsrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.GetPayableAttachmentsSecurity](../../models/operations/getpayableattachmentssecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.GetPayableAttachmentsRequest](../../sdk/models/operations/getpayableattachmentsrequest.md)   | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `security`                                                                                               | [operations.GetPayableAttachmentsSecurity](../../sdk/models/operations/getpayableattachmentssecurity.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
 
-**Promise<[operations.GetPayableAttachmentsResponse](../../models/operations/getpayableattachmentsresponse.md)>**
+**Promise<[operations.GetPayableAttachmentsResponse](../../sdk/models/operations/getpayableattachmentsresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getPayables
 
@@ -121,7 +129,6 @@ const operationSecurity: GetPayablesSecurity = {
     sort: "-createdAt,+payableDate",
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -130,17 +137,22 @@ const operationSecurity: GetPayablesSecurity = {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.GetPayablesRequest](../../models/operations/getpayablesrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.GetPayablesSecurity](../../models/operations/getpayablessecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
-| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.GetPayablesRequest](../../sdk/models/operations/getpayablesrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `security`                                                                           | [operations.GetPayablesSecurity](../../sdk/models/operations/getpayablessecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
 
 
 ### Response
 
-**Promise<[operations.GetPayablesResponse](../../models/operations/getpayablesresponse.md)>**
+**Promise<[operations.GetPayablesResponse](../../sdk/models/operations/getpayablesresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getSettlements
 
@@ -171,7 +183,6 @@ const operationSecurity: GetSettlementsSecurity = {
     ],
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -180,17 +191,22 @@ const operationSecurity: GetSettlementsSecurity = {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.GetSettlementsRequest](../../models/operations/getsettlementsrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.GetSettlementsSecurity](../../models/operations/getsettlementssecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.GetSettlementsRequest](../../sdk/models/operations/getsettlementsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.GetSettlementsSecurity](../../sdk/models/operations/getsettlementssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.GetSettlementsResponse](../../models/operations/getsettlementsresponse.md)>**
+**Promise<[operations.GetSettlementsResponse](../../sdk/models/operations/getsettlementsresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getWalletLoads
 
@@ -212,7 +228,6 @@ const operationSecurity: GetWalletLoadsSecurity = {
     sort: "+createdAt",
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -221,17 +236,22 @@ const operationSecurity: GetWalletLoadsSecurity = {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.GetWalletLoadsRequest](../../models/operations/getwalletloadsrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.GetWalletLoadsSecurity](../../models/operations/getwalletloadssecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.GetWalletLoadsRequest](../../sdk/models/operations/getwalletloadsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.GetWalletLoadsSecurity](../../sdk/models/operations/getwalletloadssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.GetWalletLoadsResponse](../../models/operations/getwalletloadsresponse.md)>**
+**Promise<[operations.GetWalletLoadsResponse](../../sdk/models/operations/getwalletloadsresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getWalletSummary
 
@@ -255,7 +275,6 @@ const operationSecurity: GetWalletSummarySecurity = {
     ],
   }, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -264,14 +283,19 @@ const operationSecurity: GetWalletSummarySecurity = {
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.GetWalletSummaryRequest](../../models/operations/getwalletsummaryrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.GetWalletSummarySecurity](../../models/operations/getwalletsummarysecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
-| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.GetWalletSummaryRequest](../../sdk/models/operations/getwalletsummaryrequest.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `security`                                                                                     | [operations.GetWalletSummarySecurity](../../sdk/models/operations/getwalletsummarysecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
 
-**Promise<[operations.GetWalletSummaryResponse](../../models/operations/getwalletsummaryresponse.md)>**
+**Promise<[operations.GetWalletSummaryResponse](../../sdk/models/operations/getwalletsummaryresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |

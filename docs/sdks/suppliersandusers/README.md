@@ -1,5 +1,5 @@
 # SuppliersAndUsers
-(*.suppliersAndUsers*)
+(*suppliersAndUsers*)
 
 ### Available Operations
 
@@ -24,7 +24,6 @@ const operationSecurity: GetSuppliersSecurity = {
 
   const res = await sdk.suppliersAndUsers.getSuppliers({}, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -33,17 +32,22 @@ const operationSecurity: GetSuppliersSecurity = {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.GetSuppliersRequest](../../models/operations/getsuppliersrequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.GetSuppliersSecurity](../../models/operations/getsupplierssecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
-| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetSuppliersRequest](../../sdk/models/operations/getsuppliersrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `security`                                                                             | [operations.GetSuppliersSecurity](../../sdk/models/operations/getsupplierssecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response
 
-**Promise<[operations.GetSuppliersResponse](../../models/operations/getsuppliersresponse.md)>**
+**Promise<[operations.GetSuppliersResponse](../../sdk/models/operations/getsuppliersresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getUsers
 
@@ -63,7 +67,6 @@ const operationSecurity: GetUsersSecurity = {
 
   const res = await sdk.suppliersAndUsers.getUsers({}, operationSecurity);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -72,14 +75,19 @@ const operationSecurity: GetUsersSecurity = {
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [operations.GetUsersRequest](../../models/operations/getusersrequest.md)   | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-| `security`                                                                 | [operations.GetUsersSecurity](../../models/operations/getuserssecurity.md) | :heavy_check_mark:                                                         | The security requirements to use for the request.                          |
-| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.GetUsersRequest](../../sdk/models/operations/getusersrequest.md)   | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `security`                                                                     | [operations.GetUsersSecurity](../../sdk/models/operations/getuserssecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response
 
-**Promise<[operations.GetUsersResponse](../../models/operations/getusersresponse.md)>**
+**Promise<[operations.GetUsersResponse](../../sdk/models/operations/getusersresponse.md)>**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.ErrorT       | 400,401,403,404,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

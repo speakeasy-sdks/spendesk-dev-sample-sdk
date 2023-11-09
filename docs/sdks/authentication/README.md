@@ -1,5 +1,5 @@
 # Authentication
-(*.authentication*)
+(*authentication*)
 
 ### Available Operations
 
@@ -26,7 +26,6 @@ import { GrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,13 +34,18 @@ import { GrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.PostAccessTokenRequest](../../models/operations/postaccesstokenrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.PostAccessTokenRequest](../../sdk/models/operations/postaccesstokenrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.PostAccessTokenResponse](../../models/operations/postaccesstokenresponse.md)>**
+**Promise<[operations.PostAccessTokenResponse](../../sdk/models/operations/postaccesstokenresponse.md)>**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.ErrorT       | 400,401,403,429,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

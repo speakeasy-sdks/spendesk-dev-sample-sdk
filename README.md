@@ -48,7 +48,7 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 ## Available Resources and Operations
 
 
-### [.accounts](docs/sdks/accounts/README.md)
+### [accounts](docs/sdks/accounts/README.md)
 
 * [getAnalyticalFields](docs/sdks/accounts/README.md#getanalyticalfields) - Get analytical fields
 * [getAnalyticalValues](docs/sdks/accounts/README.md#getanalyticalvalues) - Get analytical values
@@ -57,11 +57,11 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 * [getExpenseCategories](docs/sdks/accounts/README.md#getexpensecategories) - Get expense categories
 * [getSupplierAccounts](docs/sdks/accounts/README.md#getsupplieraccounts) - Get supplier accounts
 
-### [.authentication](docs/sdks/authentication/README.md)
+### [authentication](docs/sdks/authentication/README.md)
 
 * [postAccessToken](docs/sdks/authentication/README.md#postaccesstoken) - Create access token
 
-### [.spendData](docs/sdks/spenddata/README.md)
+### [spendData](docs/sdks/spenddata/README.md)
 
 * [getBankFees](docs/sdks/spenddata/README.md#getbankfees) - Get bank fees
 * [getPayableAttachments](docs/sdks/spenddata/README.md#getpayableattachments) - Get payables attachments
@@ -70,14 +70,14 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 * [getWalletLoads](docs/sdks/spenddata/README.md#getwalletloads) - Get wallet loads
 * [getWalletSummary](docs/sdks/spenddata/README.md#getwalletsummary) - Get wallet summaries
 
-### [.oAuth2](docs/sdks/oauth2/README.md)
+### [oAuth2](docs/sdks/oauth2/README.md)
 
 * [getAuthorize](docs/sdks/oauth2/README.md#getauthorize) - Request authorization
 * [postTokenCreate](docs/sdks/oauth2/README.md#posttokencreate) - Request access token
 * [postTokenRefreshJson](docs/sdks/oauth2/README.md#posttokenrefreshjson) - Refresh access token
 * [postTokenRefreshRaw](docs/sdks/oauth2/README.md#posttokenrefreshraw) - Refresh access token
 
-### [.suppliersAndUsers](docs/sdks/suppliersandusers/README.md)
+### [suppliersAndUsers](docs/sdks/suppliersandusers/README.md)
 
 * [getSuppliers](docs/sdks/suppliersandusers/README.md#getsuppliers) - Get suppliers
 * [getUsers](docs/sdks/suppliersandusers/README.md#getusers) - Get users of the company
@@ -92,7 +92,12 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.ErrorT           | 400,401,403,404,429,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 
 ## Example
@@ -112,11 +117,10 @@ const operationSecurity: GetAnalyticalFieldsSecurity = {
   try {
     res = await sdk.accounts.getAnalyticalFields({}, operationSecurity);
   } catch (e) { 
-    if (e instanceof Error) {
+    if (e instanceof errors.ErrorT) {
       console.error(e) // handle exception 
     
   }
-
 
   if (res.statusCode == 200) {
     // handle response
@@ -210,19 +214,16 @@ const httpClient = axios.create({
 
 const sdk = new SpendeskPublicAPI({defaultClient: httpClient});
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name             | Type             | Scheme           |
 | ---------------- | ---------------- | ---------------- |
@@ -251,7 +252,7 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 
 ## Per-Operation Security Schemes
 
-Some operations in your SDK require the security scheme to be specified at the request level. For example:
+Some operations in this SDK require the security scheme to be specified at the request level. For example:
 
 ```typescript
 import { SpendeskPublicAPI } from "Spendesk-Public-API";

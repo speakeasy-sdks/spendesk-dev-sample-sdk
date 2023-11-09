@@ -34,7 +34,7 @@ export class SuppliersAndUsers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/suppliers";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/suppliers";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetSuppliersSecurity(security);
@@ -48,7 +48,7 @@ export class SuppliersAndUsers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -129,7 +129,7 @@ export class SuppliersAndUsers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/users";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/users";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetUsersSecurity(security);
@@ -143,7 +143,7 @@ export class SuppliersAndUsers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",

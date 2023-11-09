@@ -1,5 +1,5 @@
 # OAuth2
-(*.oAuth2*)
+(*oAuth2*)
 
 ### Available Operations
 
@@ -32,7 +32,6 @@ import { CodeChallengeMethod, ResponseType } from "Spendesk-Public-API/dist/sdk/
     scope: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -41,16 +40,21 @@ import { CodeChallengeMethod, ResponseType } from "Spendesk-Public-API/dist/sdk/
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.GetAuthorizeRequest](../../models/operations/getauthorizerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.GetAuthorizeRequest](../../sdk/models/operations/getauthorizerequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
 
 
 ### Response
 
-**Promise<[operations.GetAuthorizeResponse](../../models/operations/getauthorizeresponse.md)>**
+**Promise<[operations.GetAuthorizeResponse](../../sdk/models/operations/getauthorizeresponse.md)>**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.ErrorT       | 400,401,403,429,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## postTokenCreate
 
@@ -76,7 +80,6 @@ import { PostTokenCreateGrantType } from "Spendesk-Public-API/dist/sdk/models/op
     redirectUri: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -85,16 +88,21 @@ import { PostTokenCreateGrantType } from "Spendesk-Public-API/dist/sdk/models/op
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.PostTokenCreateRequestBody](../../models/operations/posttokencreaterequestbody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.PostTokenCreateRequestBody](../../sdk/models/operations/posttokencreaterequestbody.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
 
-**Promise<[operations.PostTokenCreateResponse](../../models/operations/posttokencreateresponse.md)>**
+**Promise<[operations.PostTokenCreateResponse](../../sdk/models/operations/posttokencreateresponse.md)>**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.ErrorT       | 400,401,403,429,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## postTokenRefreshJson
 
@@ -116,7 +124,6 @@ import { PostTokenRefreshJsonGrantType } from "Spendesk-Public-API/dist/sdk/mode
     refreshToken: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -125,16 +132,21 @@ import { PostTokenRefreshJsonGrantType } from "Spendesk-Public-API/dist/sdk/mode
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PostTokenRefreshJsonRequestBody](../../models/operations/posttokenrefreshjsonrequestbody.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.PostTokenRefreshJsonRequestBody](../../sdk/models/operations/posttokenrefreshjsonrequestbody.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response
 
-**Promise<[operations.PostTokenRefreshJsonResponse](../../models/operations/posttokenrefreshjsonresponse.md)>**
+**Promise<[operations.PostTokenRefreshJsonResponse](../../sdk/models/operations/posttokenrefreshjsonresponse.md)>**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.ErrorT       | 400,401,403,429,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |
 
 ## postTokenRefreshRaw
 
@@ -152,7 +164,6 @@ import { SpendeskPublicAPI } from "Spendesk-Public-API";
 
   const res = await sdk.oAuth2.postTokenRefreshRaw(new TextEncoder().encode("0x9aDA50C8A1"));
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -163,11 +174,16 @@ import { SpendeskPublicAPI } from "Spendesk-Public-API";
 
 | Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `request`                                                    | [Uint8Array](../../models//.md)                              | :heavy_check_mark:                                           | The request object to use for the request.                   |
+| `request`                                                    | [Uint8Array](../../models/.md)                               | :heavy_check_mark:                                           | The request object to use for the request.                   |
 | `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
 
-**Promise<[operations.PostTokenRefreshRawResponse](../../models/operations/posttokenrefreshrawresponse.md)>**
+**Promise<[operations.PostTokenRefreshRawResponse](../../sdk/models/operations/posttokenrefreshrawresponse.md)>**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.ErrorT       | 400,401,403,429,500 | application/json    |
+| errors.SDKError     | 400-600             | */*                 |

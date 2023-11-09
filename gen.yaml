@@ -2,20 +2,20 @@ configVersion: 1.0.0
 management:
   docChecksum: ad0e1a1e516978eea021607b751db9f1
   docVersion: "0.1"
-  speakeasyVersion: 1.114.1
-  generationVersion: 2.181.1
+  speakeasyVersion: 1.116.0
+  generationVersion: 2.185.0
 generation:
   comments: {}
   sdkClassName: Spendesk-Public-API
   repoURL: https://github.com/speakeasy-sdks/spendesk-dev-sample-sdk.git
 features:
   typescript:
-    core: 3.1.0
+    core: 3.1.2
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
     methodSecurity: 2.82.0
 typescript:
-  version: 0.4.0
+  version: 0.4.1
   author: spendesk-dev
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
@@ -27,7 +27,9 @@ typescript:
       operations: sdk/models/operations
       shared: sdk/models/shared
       webhooks: sdk/models/webhooks
+  inputModelSuffix: input
   installationURL: https://github.com/speakeasy-sdks/spendesk-dev-sample-sdk
   maxMethodParams: 0
+  outputModelSuffix: output
   packageName: Spendesk-Public-API
   repoSubDirectory: .

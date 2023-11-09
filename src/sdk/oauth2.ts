@@ -34,7 +34,7 @@ export class OAuth2 {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/oauth2/authorize";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/oauth2/authorize";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -52,7 +52,7 @@ export class OAuth2 {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -119,7 +119,7 @@ export class OAuth2 {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/oauth2/token/create";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/oauth2/token/create";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -150,7 +150,7 @@ export class OAuth2 {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -231,7 +231,7 @@ export class OAuth2 {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/oauth2/token/refresh";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/oauth2/token/refresh";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -262,7 +262,7 @@ export class OAuth2 {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -340,7 +340,7 @@ export class OAuth2 {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/oauth2/token/refresh";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/oauth2/token/refresh";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -371,7 +371,7 @@ export class OAuth2 {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

@@ -34,7 +34,7 @@ export class Authentication {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/auth/token";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/auth/token";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -66,7 +66,7 @@ export class Authentication {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

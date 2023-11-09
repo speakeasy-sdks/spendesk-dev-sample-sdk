@@ -34,7 +34,7 @@ export class SpendData {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/bank-fees";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/bank-fees";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetBankFeesSecurity(security);
@@ -48,7 +48,7 @@ export class SpendData {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -129,7 +129,11 @@ export class SpendData {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v0/payables/{payableId}/attachments", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/v0/payables/{payableId}/attachments",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetPayableAttachmentsSecurity(security);
@@ -143,7 +147,7 @@ export class SpendData {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -225,7 +229,7 @@ export class SpendData {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/payables";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/payables";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetPayablesSecurity(security);
@@ -239,7 +243,7 @@ export class SpendData {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -320,7 +324,7 @@ export class SpendData {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/settlements";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/settlements";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetSettlementsSecurity(security);
@@ -334,7 +338,7 @@ export class SpendData {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -415,7 +419,7 @@ export class SpendData {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/wallet-loads";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/wallet-loads";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetWalletLoadsSecurity(security);
@@ -429,7 +433,7 @@ export class SpendData {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -510,7 +514,7 @@ export class SpendData {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v0/wallet-summaries";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v0/wallet-summaries";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetWalletSummarySecurity(security);
@@ -524,7 +528,7 @@ export class SpendData {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
