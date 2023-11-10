@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
