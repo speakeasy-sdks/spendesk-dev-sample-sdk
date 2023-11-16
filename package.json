@@ -1,6 +1,6 @@
 {
   "name": "Spendesk-Public-API",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "author": "spendesk-dev",
   "scripts": {
     "prepare": "tsc --build",
