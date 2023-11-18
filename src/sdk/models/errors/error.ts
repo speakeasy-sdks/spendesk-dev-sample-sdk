@@ -28,6 +28,9 @@ export class Errors extends SpeakeasyBase {
     source?: string;
 }
 
+/**
+ * Bad request
+ */
 export class ErrorT extends Error {
     @SpeakeasyMetadata({ elemType: Errors })
     @Expose({ name: "errors" })
