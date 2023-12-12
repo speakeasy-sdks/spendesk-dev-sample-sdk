@@ -20,10 +20,10 @@ Returns a list of bank fees
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetBankFeesSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetBankFeesSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.spendData.getBankFees({
@@ -36,7 +36,9 @@ const operationSecurity: GetBankFeesSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -68,10 +70,10 @@ Get attachments
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetPayableAttachmentsSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetPayableAttachmentsSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.spendData.getPayableAttachments({
@@ -81,7 +83,9 @@ const operationSecurity: GetPayableAttachmentsSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -113,10 +117,10 @@ GET payables endpoint
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { BookkeepingStatus, GetPayablesSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetPayablesSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.spendData.getPayables({
@@ -132,7 +136,9 @@ const operationSecurity: GetPayablesSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -164,10 +170,10 @@ Get settlements
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetSettlementsSecurity, PaidFrom, State } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetSettlementsSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.spendData.getSettlements({
@@ -186,7 +192,9 @@ const operationSecurity: GetSettlementsSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -218,10 +226,10 @@ Get wallet loads
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetWalletLoadsSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetWalletLoadsSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.spendData.getWalletLoads({
@@ -231,7 +239,9 @@ const operationSecurity: GetWalletLoadsSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -263,10 +273,10 @@ Get wallet summary
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetWalletSummarySecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetWalletSummarySecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.spendData.getWalletSummary({
@@ -278,7 +288,9 @@ const operationSecurity: GetWalletSummarySecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

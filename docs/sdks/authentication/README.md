@@ -15,9 +15,9 @@ Create access token
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI({
-    clientAuthFlow: "",
+    clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.authentication.postAccessToken({
@@ -29,7 +29,9 @@ import { GrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

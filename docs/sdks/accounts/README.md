@@ -20,10 +20,10 @@ Get analytical fields
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetAnalyticalFieldsSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.accounts.getAnalyticalFields({}, operationSecurity);
@@ -31,7 +31,9 @@ const operationSecurity: GetAnalyticalFieldsSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -63,10 +65,10 @@ Get analytical values
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetAnalyticalValuesSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetAnalyticalValuesSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.accounts.getAnalyticalValues({
@@ -76,7 +78,9 @@ const operationSecurity: GetAnalyticalValuesSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -108,10 +112,10 @@ Get cost centers
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetCostCentersSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetCostCentersSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.accounts.getCostCenters({
@@ -123,7 +127,9 @@ const operationSecurity: GetCostCentersSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -155,10 +161,10 @@ GET employee accounts
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetEmployeeAccountsSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetEmployeeAccountsSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.accounts.getEmployeeAccounts({
@@ -173,7 +179,9 @@ const operationSecurity: GetEmployeeAccountsSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -205,10 +213,10 @@ Get expense categories
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetExpenseCategoriesSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetExpenseCategoriesSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.accounts.getExpenseCategories({
@@ -220,7 +228,9 @@ const operationSecurity: GetExpenseCategoriesSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -252,10 +262,10 @@ GET supplier accounts
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetSupplierAccountsSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetSupplierAccountsSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.accounts.getSupplierAccounts({
@@ -267,7 +277,9 @@ const operationSecurity: GetSupplierAccountsSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

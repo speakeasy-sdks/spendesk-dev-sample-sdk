@@ -16,10 +16,10 @@ Get suppliers
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetSuppliersSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetSuppliersSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.suppliersAndUsers.getSuppliers({}, operationSecurity);
@@ -27,7 +27,9 @@ const operationSecurity: GetSuppliersSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -59,10 +61,10 @@ Get users of the company
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GetUsersSecurity } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetUsersSecurity = {
-  authorizationCodeFlow: "",
+  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.suppliersAndUsers.getUsers({}, operationSecurity);
@@ -70,7 +72,9 @@ const operationSecurity: GetUsersSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

@@ -18,9 +18,9 @@ Request user authorization for an OAuth2 connection
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { CodeChallengeMethod, ResponseType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI({
-    clientAuthFlow: "",
+    clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.oAuth2.getAuthorize({
@@ -35,7 +35,9 @@ import { CodeChallengeMethod, ResponseType } from "Spendesk-Public-API/dist/sdk/
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -66,9 +68,9 @@ Request access token with an authorization code
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { PostTokenCreateGrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI({
-    clientAuthFlow: "",
+    clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.oAuth2.postTokenCreate({
@@ -83,7 +85,9 @@ import { PostTokenCreateGrantType } from "Spendesk-Public-API/dist/sdk/models/op
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -114,9 +118,9 @@ Request a new access token with a refresh token
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { PostTokenRefreshJsonGrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI({
-    clientAuthFlow: "",
+    clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.oAuth2.postTokenRefreshJson({
@@ -127,7 +131,9 @@ import { PostTokenRefreshJsonGrantType } from "Spendesk-Public-API/dist/sdk/mode
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -157,9 +163,9 @@ Request a new access token with a refresh token
 ```typescript
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 
-(async() => {
+async function run() {
   const sdk = new SpendeskPublicAPI({
-    clientAuthFlow: "",
+    clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.oAuth2.postTokenRefreshRaw(new TextEncoder().encode("0x9aDA50C8A1"));
@@ -167,7 +173,9 @@ import { SpendeskPublicAPI } from "Spendesk-Public-API";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

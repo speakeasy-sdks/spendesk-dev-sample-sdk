@@ -59,7 +59,6 @@ src/sdk/models/errors/error.ts
 src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/index.ts
-USAGE.md
 docs/sdk/models/operations/getanalyticalfieldssecurity.md
 docs/sdk/models/operations/getanalyticalfieldsrequest.md
 docs/sdk/models/operations/data.md
@@ -202,4 +201,5 @@ docs/sdks/authentication/README.md
 docs/sdks/spenddata/README.md
 docs/sdks/oauth2/README.md
 docs/sdks/suppliersandusers/README.md
+USAGE.md
 .gitattributes
