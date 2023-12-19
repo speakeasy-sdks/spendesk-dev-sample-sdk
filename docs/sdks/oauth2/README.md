@@ -56,7 +56,7 @@ run();
 | Error Object        | Status Code         | Content Type        |
 | ------------------- | ------------------- | ------------------- |
 | errors.ErrorT       | 400,401,403,429,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| errors.SDKError     | 4xx-5xx             | */*                 |
 
 ## postTokenCreate
 
@@ -106,7 +106,7 @@ run();
 | Error Object        | Status Code         | Content Type        |
 | ------------------- | ------------------- | ------------------- |
 | errors.ErrorT       | 400,401,403,429,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| errors.SDKError     | 4xx-5xx             | */*                 |
 
 ## postTokenRefreshJson
 
@@ -152,7 +152,7 @@ run();
 | Error Object        | Status Code         | Content Type        |
 | ------------------- | ------------------- | ------------------- |
 | errors.ErrorT       | 400,401,403,429,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| errors.SDKError     | 4xx-5xx             | */*                 |
 
 ## postTokenRefreshRaw
 
@@ -194,4 +194,4 @@ run();
 | Error Object        | Status Code         | Content Type        |
 | ------------------- | ------------------- | ------------------- |
 | errors.ErrorT       | 400,401,403,429,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| errors.SDKError     | 4xx-5xx             | */*                 |
