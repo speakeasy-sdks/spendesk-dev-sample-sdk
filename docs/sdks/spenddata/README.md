@@ -28,7 +28,7 @@ const operationSecurity: GetBankFeesSecurity = {
 
   const res = await sdk.spendData.getBankFees({
     settlementIds: [
-      "string",
+      "<value>",
     ],
     sort: "+createdAt",
   }, operationSecurity);
@@ -77,7 +77,7 @@ const operationSecurity: GetPayableAttachmentsSecurity = {
 };
 
   const res = await sdk.spendData.getPayableAttachments({
-    payableId: "string",
+    payableId: "<value>",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -128,7 +128,7 @@ const operationSecurity: GetPayablesSecurity = {
       BookkeepingStatus.Exported,
     ],
     ids: [
-      "string",
+      "<value>",
     ],
     sort: "-createdAt,+payableDate",
   }, operationSecurity);
@@ -178,7 +178,7 @@ const operationSecurity: GetSettlementsSecurity = {
 
   const res = await sdk.spendData.getSettlements({
     ids: [
-      "string",
+      "<value>",
     ],
     paidFrom: [
       PaidFrom.SpendeskAccount,
@@ -281,7 +281,7 @@ const operationSecurity: GetWalletSummarySecurity = {
 
   const res = await sdk.spendData.getWalletSummary({
     ids: [
-      "string",
+      "<value>",
     ],
   }, operationSecurity);
 

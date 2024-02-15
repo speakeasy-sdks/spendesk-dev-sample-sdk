@@ -10,7 +10,6 @@ import { Expose } from "class-transformer";
  */
 export enum DefaultFor {
     Employees = "employees",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class EmployeeAccount extends SpeakeasyBase {

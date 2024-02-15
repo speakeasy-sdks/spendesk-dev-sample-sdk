@@ -24,12 +24,12 @@ async function run() {
   });
 
   const res = await sdk.oAuth2.getAuthorize({
-    clientId: "string",
-    codeChallenge: "string",
+    clientId: "<value>",
+    codeChallenge: "<value>",
     codeChallengeMethod: CodeChallengeMethod.S256,
-    redirectUri: "string",
+    redirectUri: "<value>",
     responseType: ResponseType.Code,
-    scope: "string",
+    scope: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -74,12 +74,12 @@ async function run() {
   });
 
   const res = await sdk.oAuth2.postTokenCreate({
-    clientId: "string",
-    clientSecret: "string",
-    code: "string",
-    codeVerifier: "string",
+    clientId: "<value>",
+    clientSecret: "<value>",
+    code: "<value>",
+    codeVerifier: "<value>",
     grantType: PostTokenCreateGrantType.AuthorizationCode,
-    redirectUri: "string",
+    redirectUri: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -125,7 +125,7 @@ async function run() {
 
   const res = await sdk.oAuth2.postTokenRefreshJson({
     grantType: PostTokenRefreshJsonGrantType.RefreshToken,
-    refreshToken: "string",
+    refreshToken: "<value>",
   });
 
   if (res.statusCode == 200) {

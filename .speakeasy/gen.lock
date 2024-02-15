@@ -4,15 +4,15 @@ management:
   docChecksum: ad0e1a1e516978eea021607b751db9f1
   docVersion: "0.1"
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 0.5.1
-  configChecksum: 2e2be695eb07c9e89971ba5ca001c370
+  generationVersion: 2.258.2
+  releaseVersion: 0.5.2
+  configChecksum: 6d44f02860b4b667b692493113678bdf
   repoURL: https://github.com/speakeasy-sdks/spendesk-dev-sample-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/spendesk-dev-sample-sdk
 features:
   typescript:
-    core: 3.4.1
+    core: 3.4.7
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
     methodSecurity: 2.82.0
