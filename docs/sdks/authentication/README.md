@@ -16,9 +16,7 @@ import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { GrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new SpendeskPublicAPI({
-    clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
-  });
+  const sdk = new SpendeskPublicAPI();
 
   const res = await sdk.authentication.postAccessToken({
     requestBody: {

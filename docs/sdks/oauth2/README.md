@@ -19,9 +19,7 @@ import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { CodeChallengeMethod, ResponseType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new SpendeskPublicAPI({
-    clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
-  });
+  const sdk = new SpendeskPublicAPI();
 
   const res = await sdk.oAuth2.getAuthorize({
     clientId: "<value>",
@@ -69,9 +67,7 @@ import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { PostTokenCreateGrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new SpendeskPublicAPI({
-    clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
-  });
+  const sdk = new SpendeskPublicAPI();
 
   const res = await sdk.oAuth2.postTokenCreate({
     clientId: "<value>",
@@ -119,9 +115,7 @@ import { SpendeskPublicAPI } from "Spendesk-Public-API";
 import { PostTokenRefreshJsonGrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new SpendeskPublicAPI({
-    clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
-  });
+  const sdk = new SpendeskPublicAPI();
 
   const res = await sdk.oAuth2.postTokenRefreshJson({
     grantType: PostTokenRefreshJsonGrantType.RefreshToken,
@@ -164,9 +158,7 @@ Request a new access token with a refresh token
 import { SpendeskPublicAPI } from "Spendesk-Public-API";
 
 async function run() {
-  const sdk = new SpendeskPublicAPI({
-    clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
-  });
+  const sdk = new SpendeskPublicAPI();
 
   const res = await sdk.oAuth2.postTokenRefreshRaw(new TextEncoder().encode("0x9aDA50C8A1"));
 
