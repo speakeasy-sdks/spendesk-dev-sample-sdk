@@ -3,10 +3,10 @@ id: c217a4dc-b164-451f-b23e-6a1f28191c1b
 management:
   docChecksum: ad0e1a1e516978eea021607b751db9f1
   docVersion: "0.1"
-  speakeasyVersion: internal
-  generationVersion: 2.272.7
-  releaseVersion: 0.5.4
-  configChecksum: 180c6614bed4e35a266ad787b56dc3f1
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 0.5.5
+  configChecksum: 3614977344c38949447c04d145bbf653
   repoURL: https://github.com/speakeasy-sdks/spendesk-dev-sample-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/spendesk-dev-sample-sdk
@@ -14,7 +14,7 @@ features:
   typescript:
     core: 3.4.8
     globalSecurity: 2.82.4
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     methodSecurity: 2.82.0
 generatedFiles:
   - src/sdk/accounts.ts

@@ -59,9 +59,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "0.1";
-    sdkVersion = "0.5.4";
-    genVersion = "2.272.7";
-    userAgent = "speakeasy-sdk/typescript 0.5.4 2.272.7 0.1 Spendesk-Public-API";
+    sdkVersion = "0.5.5";
+    genVersion = "2.280.6";
+    userAgent = "speakeasy-sdk/typescript 0.5.5 2.280.6 0.1 Spendesk-Public-API";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -85,9 +85,12 @@ export class SpendeskPublicAPI {
 
     constructor(props?: SDKProps) {
         let serverURL = props?.serverURL;
-        const serverIdx = props?.serverIdx ?? 0;
 
         if (!serverURL) {
+            const serverIdx = props?.serverIdx ?? 0;
+            if (serverIdx < 0 || serverIdx >= ServerList.length) {
+                throw new Error(`Invalid server index ${serverIdx}`);
+            }
             serverURL = ServerList[serverIdx];
         }
 
