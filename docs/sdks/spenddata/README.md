@@ -23,7 +23,7 @@ import { GetBankFeesSecurity } from "Spendesk-Public-API/dist/sdk/models/operati
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetBankFeesSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.spendData.getBankFees({
@@ -73,7 +73,7 @@ import { GetPayableAttachmentsSecurity } from "Spendesk-Public-API/dist/sdk/mode
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetPayableAttachmentsSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.spendData.getPayableAttachments({
@@ -120,7 +120,7 @@ import { BookkeepingStatus, GetPayablesSecurity } from "Spendesk-Public-API/dist
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetPayablesSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.spendData.getPayables({
@@ -173,7 +173,7 @@ import { GetSettlementsSecurity, PaidFrom, State } from "Spendesk-Public-API/dis
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetSettlementsSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.spendData.getSettlements({
@@ -229,7 +229,7 @@ import { GetWalletLoadsSecurity } from "Spendesk-Public-API/dist/sdk/models/oper
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetWalletLoadsSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.spendData.getWalletLoads({
@@ -276,7 +276,7 @@ import { GetWalletSummarySecurity } from "Spendesk-Public-API/dist/sdk/models/op
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetWalletSummarySecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.spendData.getWalletSummary({

@@ -34,7 +34,7 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 async function run() {
     const sdk = new SpendeskPublicAPI();
     const operationSecurity: GetAnalyticalFieldsSecurity = {
-        authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
     };
 
     const res = await sdk.accounts.getAnalyticalFields({}, operationSecurity);
@@ -108,7 +108,7 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 async function run() {
     const sdk = new SpendeskPublicAPI();
     const operationSecurity: GetAnalyticalFieldsSecurity = {
-        authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
     };
 
     let res;
@@ -159,7 +159,7 @@ async function run() {
         serverIdx: 1,
     });
     const operationSecurity: GetAnalyticalFieldsSecurity = {
-        authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
     };
 
     const res = await sdk.accounts.getAnalyticalFields({}, operationSecurity);
@@ -186,7 +186,7 @@ async function run() {
         serverURL: "https://sandbox-public-api.spendesk.com",
     });
     const operationSecurity: GetAnalyticalFieldsSecurity = {
-        authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
     };
 
     const res = await sdk.accounts.getAnalyticalFields({}, operationSecurity);
@@ -242,13 +242,11 @@ import { GrantType } from "Spendesk-Public-API/dist/sdk/models/operations";
 
 async function run() {
     const sdk = new SpendeskPublicAPI({
-        clientAuthFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        clientAuthFlow: "<YOUR_CLIENT_AUTH_FLOW_HERE>",
     });
 
     const res = await sdk.authentication.postAccessToken({
-        requestBody: {
-            scope: "bank-fee:read payable:read payable-attachment:read settlement:read wallet-load:read wallet-summary:read user:read supplier:read analytical-field:read",
-        },
+        scope: "bank-fee:read payable:read payable-attachment:read settlement:read wallet-load:read wallet-summary:read user:read supplier:read analytical-field:read",
     });
 
     if (res.statusCode == 200) {
@@ -270,7 +268,7 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 async function run() {
     const sdk = new SpendeskPublicAPI();
     const operationSecurity: GetAnalyticalFieldsSecurity = {
-        authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
     };
 
     const res = await sdk.accounts.getAnalyticalFields({}, operationSecurity);

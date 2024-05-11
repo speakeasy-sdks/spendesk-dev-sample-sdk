@@ -6,7 +6,7 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 async function run() {
     const sdk = new SpendeskPublicAPI();
     const operationSecurity: GetAnalyticalFieldsSecurity = {
-        authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
     };
 
     const res = await sdk.accounts.getAnalyticalFields({}, operationSecurity);

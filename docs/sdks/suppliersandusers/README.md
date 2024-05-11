@@ -19,7 +19,7 @@ import { GetSuppliersSecurity } from "Spendesk-Public-API/dist/sdk/models/operat
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetSuppliersSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.suppliersAndUsers.getSuppliers({}, operationSecurity);
@@ -64,7 +64,7 @@ import { GetUsersSecurity } from "Spendesk-Public-API/dist/sdk/models/operations
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetUsersSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.suppliersAndUsers.getUsers({}, operationSecurity);

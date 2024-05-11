@@ -34,11 +34,6 @@ export class PostAccessTokenRequestBody extends SpeakeasyBase {
     scope?: string;
 }
 
-export class PostAccessTokenRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: PostAccessTokenRequestBody;
-}
-
 /**
  * OK
  */

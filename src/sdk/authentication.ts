@@ -22,11 +22,11 @@ export class Authentication {
      * Create access token
      */
     async postAccessToken(
-        req: operations.PostAccessTokenRequest,
+        req: operations.PostAccessTokenRequestBody,
         config?: AxiosRequestConfig
     ): Promise<operations.PostAccessTokenResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostAccessTokenRequest(req);
+            req = new operations.PostAccessTokenRequestBody(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -38,18 +38,14 @@ export class Authentication {
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers: RawAxiosRequestHeaders = {
-            ...utils.getHeadersFromRequest(req),
-            ...reqBodyHeaders,
-            ...config?.headers,
-        };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;

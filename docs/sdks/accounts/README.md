@@ -23,7 +23,7 @@ import { GetAnalyticalFieldsSecurity } from "Spendesk-Public-API/dist/sdk/models
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetAnalyticalFieldsSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.accounts.getAnalyticalFields({}, operationSecurity);
@@ -68,7 +68,7 @@ import { GetAnalyticalValuesSecurity } from "Spendesk-Public-API/dist/sdk/models
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetAnalyticalValuesSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.accounts.getAnalyticalValues({
@@ -115,7 +115,7 @@ import { GetCostCentersSecurity } from "Spendesk-Public-API/dist/sdk/models/oper
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetCostCentersSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.accounts.getCostCenters({
@@ -164,7 +164,7 @@ import { GetEmployeeAccountsSecurity } from "Spendesk-Public-API/dist/sdk/models
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetEmployeeAccountsSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.accounts.getEmployeeAccounts({
@@ -216,7 +216,7 @@ import { GetExpenseCategoriesSecurity } from "Spendesk-Public-API/dist/sdk/model
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetExpenseCategoriesSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.accounts.getExpenseCategories({
@@ -265,7 +265,7 @@ import { GetSupplierAccountsSecurity } from "Spendesk-Public-API/dist/sdk/models
 async function run() {
   const sdk = new SpendeskPublicAPI();
 const operationSecurity: GetSupplierAccountsSecurity = {
-  authorizationCodeFlow: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  authorizationCodeFlow: "<YOUR_AUTHORIZATION_CODE_FLOW_HERE>",
 };
 
   const res = await sdk.accounts.getSupplierAccounts({
